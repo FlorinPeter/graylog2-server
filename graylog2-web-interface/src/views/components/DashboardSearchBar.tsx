@@ -20,12 +20,12 @@ import PropTypes from 'prop-types';
 import { Field } from 'formik';
 import moment from 'moment';
 
-import { Col, Row, RowFlat } from 'components/graylog';
+import { Col, Row } from 'components/graylog';
 import connect from 'stores/connect';
 import DocumentationLink from 'components/support/DocumentationLink';
 import DocsHelper from 'util/DocsHelper';
 import RefreshControls from 'views/components/searchbar/RefreshControls';
-import { Icon, Spinner } from 'components/common';
+import { FlatContentRow, Icon, Spinner } from 'components/common';
 import ScrollToHint from 'views/components/common/ScrollToHint';
 import SearchButton from 'views/components/searchbar/SearchButton';
 import QueryInput from 'views/components/searchbar/AsyncQueryInput';
@@ -64,7 +64,7 @@ const DashboardSearchBar = ({ config, globalOverride, disableSearch = false, onE
     <WidgetFocusContext.Consumer>
       {({ focusedWidget: { editing } = { editing: false } }) => (
         <ScrollToHint value={queryString}>
-          <RowFlat>
+          <FlatContentRow>
             <DashboardSearchForm initialValues={{ timerange, queryString }}
                                  limitDuration={limitDuration}
                                  onSubmit={submitForm}>
@@ -116,7 +116,7 @@ const DashboardSearchBar = ({ config, globalOverride, disableSearch = false, onE
                 </>
               )}
             </DashboardSearchForm>
-          </RowFlat>
+          </FlatContentRow>
         </ScrollToHint>
       )}
     </WidgetFocusContext.Consumer>

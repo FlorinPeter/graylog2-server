@@ -24,8 +24,8 @@ import moment from 'moment';
 import connect from 'stores/connect';
 import DocumentationLink from 'components/support/DocumentationLink';
 import DocsHelper from 'util/DocsHelper';
-import { Spinner, Icon } from 'components/common';
-import { Col, Row, RowFlat } from 'components/graylog';
+import { Spinner, Icon, FlatContentRow } from 'components/common';
+import { Col, Row } from 'components/graylog';
 import TopRow from 'views/components/searchbar/TopRow';
 import SearchButton from 'views/components/searchbar/SearchButton';
 import SavedSearchControls from 'views/components/searchbar/saved-search/SavedSearchControls';
@@ -109,7 +109,7 @@ const SearchBar = ({
     <WidgetFocusContext.Consumer>
       {({ focusedWidget: { editing } = { editing: false } }) => (
         <ScrollToHint value={query.query_string}>
-          <RowFlat>
+          <FlatContentRow>
             <SearchBarForm initialValues={{ timerange, streams, queryString }}
                            limitDuration={limitDuration}
                            onSubmit={_onSubmit}>
@@ -172,7 +172,7 @@ const SearchBar = ({
                 </>
               )}
             </SearchBarForm>
-          </RowFlat>
+          </FlatContentRow>
         </ScrollToHint>
       )}
     </WidgetFocusContext.Consumer>
