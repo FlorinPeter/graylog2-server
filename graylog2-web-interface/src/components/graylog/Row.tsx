@@ -18,6 +18,8 @@
 import { Row as BootstrapRow } from 'react-bootstrap';
 import styled, { css } from 'styled-components';
 
+export const BOTTOM_MARGIN = 6;
+
 export const RowContentStyles = css(({ theme }) => css`
   background-color: ${theme.colors.global.contentBackground};
   border: 1px solid ${theme.colors.variant.lighter.default};
